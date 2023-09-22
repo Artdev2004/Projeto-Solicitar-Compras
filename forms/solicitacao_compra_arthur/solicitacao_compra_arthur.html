@@ -1,0 +1,110 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+	<div class="form-group main">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Solicitante</h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="nome"><span>Nome</span></label>
+						<input type="text" id="nome" class="form-control" name="nome">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="dtEmissao">Data de Emissão</label>
+						<input type="text" id="dtEmissao" name="dtEmissao" class="form-control">
+					</div>
+					<div class="form-group" >
+						<label for="dtVencimento">Data Vencimento</label>
+						<input type="text" id="dtVencimento" name="dtVencimento" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Dados da Solicitação</h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="filial">Filial</label>
+						<select name="filial" id="filial" class="form-control"></select>
+						<!-- DATASET -->
+					</div>
+					<div class="form-group col-md-3">
+						<label for="deptEmitente">Depto. Emitente</label>
+						<select name="deptEmitente" id="deptEmitente" class="form-control">
+							<option value="TI">TI</option>
+							<option value="Almoxarifado">Almoxarifado</option>
+							<option value="Secretaria">Secretaria</option>
+							<option value="Escritório">Escritório</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="centroCusto">Centro de Custo</label>
+						<select name="centroCusto" id="centroCusto" class="form-control">
+							<!-- DATASET -->
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="tipoPagamento">Tipo de Pagamento</label>
+						<select name="tipoPagamento" id="tipoPagamento" class="form-control">
+							<option value="Depósito">Depósito</option>
+							<option value="Pix">Pix</option>
+							<option value="Dinheiro">Dinheiro</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-5">
+						<label for="email">E-mail</label>
+						<input type="email" class="form-control" id="email" name="email">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="telefone">Telefone</label>
+						<input type="text" name="telefone" id="telefone" class="form-control">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="ramal">Ramal</label>
+						<input type="number" name="ramal" id="ramal" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label for="cep">CEP</label>
+						<input type="text" name="cep" class="form-control" id="cep">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="endereco">Endereço</label>
+						<input type="text" name="endereco" id="endereco" class="form-control">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="cidade">Cidade</label>
+						<input type="text" name="cidade" id="cidade" class="form-control" >
+					</div>
+					<div class="form-group col-md-3">
+						<label for="estado">Estado</label>
+						<input type="text" name="estado" id="estado" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
