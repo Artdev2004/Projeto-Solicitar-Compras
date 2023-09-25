@@ -12,6 +12,7 @@
 <div class="fluig-style-guide">
 <form name="form" role="form">
 	<div class="form-group main">
+		<!-- DADOS SOLICITANTE -->
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h3 class="panel-title">Solicitante</h3>
@@ -33,6 +34,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- DADOS SOLICITAÇÃO -->
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h3 class="panel-title">Dados da Solicitação</h3>
@@ -138,10 +140,54 @@
 						<textarea name="historico" id="historico" cols="30" rows="10" class="form-control"></textarea>
 					</div>
 				</div>
-				
-				
-				
-
+			</div>
+		</div>
+		<!-- ITENS SOLICITACAO -->
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Itens da Solicitação</h3>
+			</div>
+			<div class="panel-body">
+				<table tablename="itensTabela">
+					<thead>
+						<tr>
+							<td></td>
+							<td>Produto</td>
+							<td>Descrição</td>
+							<td>Un. Medida</td> 
+							<td>Quant</td>
+							<td>Vl. Unit</td>
+							<td>Vl. Total</td>
+							<td>Necessidade</td>
+							<td>Centro de Custo</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td><input type="number" class="form-control" id="produto" name="produto"></td>
+							<td><input type="text" class="form-control" id="descricao" name="descricao"></td>
+							<td>
+								<select class="form-control" id="unMedida" name="unMedida">
+									<option value="unidade">Uni</option>
+									<option value="centena">Dez</option>
+									<option value="dezena">Cen</option>
+									<option value="milhar">Mil</option>
+								</select>
+							</td>
+							<td>
+								<input type="number" class="form-control" id="quant" name="quant">
+							</td>
+							<td>
+								<input type="text" class="form-control" id="vlUnit" name="vlUnit">
+							</td>
+							<td><input type="number" class="form-control" id="vlTotal" name="vlTotal"></td>
+							<td><input type="text" class="form-control" id="necessidade" name="necessidade"></td>
+							<td><select class="form-control" id="centroCustoProduto" name="centroCustoProduto"></td>
+								<!-- DATASET -->
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
