@@ -109,7 +109,7 @@
 						<input type="text" name="cnpjCpf" id="cnpjCpf" class="form-control">
 					</div>
 					<div class="form-group col-md-5">
-						<label for="razaoSocial">Razão Social / Nome </label>
+						<label for="razaoSocial">Razão Social / Nome</label>
 						<input type="text" name="razaoSocial" id="razaoSocial" class="form-control">
 					</div>
 				</div>
@@ -148,7 +148,7 @@
 				<h3 class="panel-title">Itens da Solicitação</h3>
 			</div>
 			<div class="panel-body">
-				<table tablename="itensTabela">
+				<table tablename="itensTabela" class="table table-hover">
 					<thead>
 						<tr>
 							<td></td>
@@ -188,6 +188,37 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Anexos da Solicitação</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group col-md-3">
+					<label for="nf">Número da NF</label>
+					<input type="number" name="nf" class="form-control" id="nf">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="dtReferencia">Data de Referência</label>
+					<input type="text" name="dtReferencia" class="form-control" id="dtReferencia">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="valorNf">Valor Total da NF</label>
+					<input type="number" name="valorNf" class="form-control" id="valorNf">
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Aprovação - Gestor</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aprovarGestorSim">Aprovar Pedido?</label>
+					<input type="button" id="aprovarGestorSim" value="SIM">
+					<input type="button" id="aprovarGestorNao" value="NAO">
+				</div>
 			</div>
 		</div>
 	</div>
