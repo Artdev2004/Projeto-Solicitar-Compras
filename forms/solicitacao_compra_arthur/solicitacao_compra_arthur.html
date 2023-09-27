@@ -190,6 +190,7 @@
 				</table>
 			</div>
 		</div>
+		<!-- ANEXOS SOLICITAÇÃO -->
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h3 class="panel-title">Anexos da Solicitação</h3>
@@ -209,26 +210,52 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info">
+		<!-- APROVAÇÃO GESTOR HIDDEN  -->
+		<div class="panel panel-info" id="gestor" style="display: none !important;">
 			<div class="panel-heading">
 				<h3 class="panel-title">Aprovação - Gestor</h3>
 			</div>
 			<div class="panel-body">
-					<label for="aprovarGestorSim">Aprovar Pedido?</label>
+					<h4 for="" style="margin-left: 10rem;">Aprovar Pedido?</h4>
 					<div class="row">
-						<div class="form-group col-md-2">
-							<input type="button" style="color: #75ff75; height: 40px; background-color: transparent; border-color: #75ff75;" id="aprovarGestorSim" class="form-control" value="SIM">
-						</div>
-						<div class="form-group col-md-2">
-							<input type="button" style="height: 40px; color: #b81414; background-color: transparent; border-color: #b81414;"  id="aprovarGestorNao" class="form-control" value="NAO">
-						</div>
-						<div class="form-group col-md-8">
-							<textarea name="observacoesGestor" id="observacoesGestor" cols="30" rows="10" class="form-control"></textarea>
-						</div>
+							<div class="form-group col-md-2">
+								<input type="button" style=" color: #75ff75; margin-top: 3rem;  height: 40px; background-color: transparent; border-color: #75ff75;" id="aprovarGestorSim" class="form-control" value="SIM">
+							</div>
+							<div class="form-group col-md-2">
+								<input type="button" style="margin-top: 3rem;  height: 40px; color: #b81414; background-color: transparent; border-color: #b81414;"  id="aprovarGestorNao" class="form-control" value="NÃO">
+							</div>
+							<div class="form-group col-md-8">
+								<label for="observacoesGestor">Observações</label>
+								<textarea name="observacoesGestor" id="observacoesGestor" cols="10" rows="3" class="form-control"></textarea>
+							</div>
+					</div>
+			</div>
+		</div>
+		<!-- APROVAÇÃO RH HIDDEN -->
+		<div class="panel panel-info" id="rh" hidden>
+			<div class="panel-heading">
+				<h3 class="panel-title">Aprovação - RH</h3>
+			</div>
+			<div class="panel-body">
+					<h4 for="" style="margin-left: 10rem;">Aprovar Pedido?</h4>
+					<div class="row">
+							<div class="form-group col-md-2">
+								<input type="button" style=" color: #75ff75; margin-top: 3rem;  height: 40px; background-color: transparent; border-color: #75ff75;" id="aprovarRhSim" class="form-control" value="SIM">
+							</div>
+							<div class="form-group col-md-2">
+								<input type="button" style="margin-top: 3rem;  height: 40px; color: #b81414; background-color: transparent; border-color: #b81414;"  id="aprovarRhNao" class="form-control" value="NAO">
+							</div>
+							<div class="form-group col-md-8">
+								<label for="observacoesRh">Observações</label>
+								<textarea name="observacoesRh" id="observacoesRh" cols="10" rows="3" class="form-control"></textarea>
+							</div>
 					</div>
 			</div>
 		</div>
 	</div>
+	<input type="hidden" id="etapa" name="etapa">
+	<input type="hidden" id="aprovaGestor" name="aprovaGestor">
+	<input type="hidden" id="aprovaRh" name="aprovaRh">
 </form>
 </div>
 <script src="script.js"></script>
