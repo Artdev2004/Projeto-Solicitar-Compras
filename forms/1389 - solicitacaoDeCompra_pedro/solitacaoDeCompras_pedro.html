@@ -1,0 +1,424 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+
+    <form name="form" role="form">
+		<input type="hidden" name="fase" id="fase" />
+		<input type="hidden" name="tempoAprovAut" id="tempoAprovAut" />
+
+		<!-- /solicitante -->
+        <div class="row">
+			<div class="form-group col-md-4">
+				<label for="solicitante">Solicitante</label>
+				<input 
+					type="text" 
+					readonly 
+					required 
+					id="solicitante" 
+					name="solicitante" 
+					class="form-control"
+				/>
+			</div>
+			<div class="form-group col-md-2">
+				<label for="dataEmissao">Data da Emissão</label>
+				<input 
+					type="text" 
+					readonly 
+					id="dataEmissao" 
+					name="dataEmissao" 
+					class="form-control"
+				/>
+			</div>
+			<div class="form-group col-md-2">
+				<label for="dataVencto">Data de Vencto</label>
+				<input 
+					type="text" 
+					required 
+					id="dataVencto" 
+					name="dataVencto" 
+					class="form-control"
+				/>
+			</div>
+		</div>
+		<!-- /solicitante -->
+
+		<!-- Dados da solicitação -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					Dados da solicitação
+				</h3>
+			</div>
+		
+			<div class="panel-body">
+				<div class="row col-md-12" style="margin-top: 8px;">
+					<div class="form-group col-md-2">
+						<label for="filial">Filial</label>
+						<input type="zoom" name="filial" id="filial" class="form-control"
+								data-zoom="{
+									'displayKey':'filial',
+									'datasetId':'dsFiliaisPedro',
+									'fields':[
+										{
+											'field':'filial',
+											'label':'Filial',
+											'standard':'true'
+										}
+										]
+									}"
+						/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="emitente">Depto. Emitente</label>
+						<select 
+							name="emitente"  
+							id="emitente" 
+							class="form-control"
+							dataset="dsDeptoEmitente_pedro"
+							datasetKey="depto.name" 
+							datasetValue="depto.name"
+						>
+						</select>
+						
+					</div>
+					<div class="form-group col-md-2">
+						<label for="centroDeCusto">Centro de Custo</label>
+						<input type="zoom" name="centroDeCusto" id="centroDeCusto" class="form-control"
+								data-zoom="{
+									'displayKey':'centroCusto',
+									'datasetId':'dsCentroDeCusto_pedro',
+									'fields':[
+										{
+											'field':'centroCusto',
+											'label':'Nome',
+											'standard':'true'
+										}
+										]
+									}"
+						/>
+						
+					</div>
+					<div class="form-group col-md-2">
+						<label for="tipoPagamento">Tipo de  Pagamento</label>
+						<select name="tipoPagamento"  id="tipoPagamento" class="form-control">
+							<option value="">Selecione uma opção</option>
+							<option value="deposito">Depósito</option>
+							<option value="pix">PIX</option>
+							<option value="credito">Crédito</option>
+						</select>
+					</div>
+				</div>
+	
+				<div class="row col-md-12">
+					<div class="form-group col-md-3">
+						<label for="email">E-mail</label>
+						<input type="email" required id="email" name="email" class="form-control" />
+					</div>
+					<div class="form-group col-md-3">
+						<label for="telefone">Telefone</label>
+						<input type="text" required id="telefone" name="telefone" class="form-control" mask="(00) 0000-0000"/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="ramal">Ramal</label>
+						<input type="text" required id="ramal" name="ramal" class="form-control" maxlength="4"/>
+					</div>
+				</div>
+	
+				<div class="row col-md-12">
+					<div class="form-group col-md-2">
+						<label for="cep">CEP</label>
+						<input type="text" required id="cep" name="cep" class="form-control" mask="00000-000"/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="endereco">Endereço</label>
+						<input type="text" required id="endereco" name="endereco" class="form-control" readonly/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="cidade">Cidade</label>
+						<input type="text" required id="cidade" name="cidade" class="form-control" readonly/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="estado">Estado</label>
+						<input type="text" required id="estado" name="estado" class="form-control" readonly/>
+					</div>
+				</div>
+	
+				<div class="row col-md-12">
+					<div class="form-group col-md-6">
+						<h3>DADOS DO FAVORECIDO</h3>
+					</div>
+				</div>
+	
+				<div class="row col-md-12">
+					
+					<div class="form-group col-md-6">
+						<label for="cnpj">CNPJ</label>
+						<input type="text" required id="cnpj" name="cnpj" class="form-control" mask="00.000.000/0000-00"/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="razaoSocial">Razao social</label>
+						<input type="text" required id="razaoSocial" name="razaoSocial" class="form-control" readonly/>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="banco">Banco</label>
+						<input type="text" required id="banco" name="banco" class="form-control" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="agencia">Agência</label>
+						<input type="text" required id="agencia" name="agencia" class="form-control" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="tipoConta">Tipo de conta</label>
+						<select name="tipoConta" class="form-control">
+							<option value="">Selecione uma conta</option>
+							<option value="corrente">Conta corrente</option>
+							<option value="poupança">Conta poupança</option>
+						</select>
+					</div>
+					<div class="form-group col-md-2">
+						<label for="conta">Conta</label>
+						<input type="text" required id="conta" name="conta" class="form-control" />
+					</div>
+				</div>
+	
+				<div class="row col-md-12">
+					<div class="form-group col-md-12">
+						<label for="informacoes">Observações / Histórico</label>
+						<textarea row="5" name="informacoes" id="informacoes" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+		
+
+		</div>
+		<!-- /Dados da solicitação -->
+
+		<!-- Itens da solicitação -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Itens da solicitação</h3>
+			</div>
+			<div class="panel-body">
+				<table tablename="itensSolicitacao" class="table table-hover" noaddbutton="true" id="itensSolicitacao">
+					<thead>
+						<tr>
+							<td>Produto</td>
+							<td>Descrição</td>
+							<td>Un. medida</td>
+							<td>Quant</td>
+							<td>VL. Unit</td>
+							<td>VL. Total</td>
+							<td>Necessidade</td>
+							<td>Centro de custo</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="rows">
+							<td class="col-md-3">
+								<input type="zoom" name="produto" id="produto" class="form-control"
+								data-zoom="{
+									'displayKey':'codigo',
+									'datasetId':'dsProdutos_Pedro',
+									'fields':[
+										{
+											'field':'codigo',
+											'label':'Codigo',
+											'standard':'true'
+										},
+										{
+											'field':'descricao',
+											'label':'Descrição'
+											
+										},
+										{
+											'field':'unMedida',
+											'label':'UN. Medida'
+										}
+									]
+								}"
+						/>
+							</td>
+							<td class="col-md-2">
+								<input type="text" required id="descricao" name="descricao" class="form-control" readonly/>
+							</td>
+							<td class=" col-md-1">
+								<input type="text" required id="un" name="un" class="form-control" readonly/>
+							</td>
+							<td class="col-md-1">
+								<input type="number" required id="quant" name="quant" class="form-control" />
+							</td>
+							<td class="col-md-1">
+								<input type="text" required id="valor" name="valor" class="form-control" />
+							</td>
+							<td class="col-md-1">
+								<input type="text" required id="total" name="total" class="form-control" />
+							</td>
+							<td class="col-md-1">
+								<input 
+									type="text"  
+									id="necessidade" 
+									name="necessidade" 
+									class="form-control"
+								/>
+							</td>
+							<td class="col-md-3">
+								<input type="zoom" name="centroDeCustoItem" id="centroDeCustoItem" class="form-control"
+								data-zoom="{
+									'displayKey':'centroCusto',
+									'datasetId':'dsCentroDeCusto_pedro',
+									'fields':[
+											{
+												'field':'centroCusto',
+												'label':'Nome',
+												'standard':'true'
+											},
+											{
+												'field':'centroCusto',
+												'label':'Nome',
+												'standard':'true'
+											}
+										]
+									}"
+							/>
+							</td>
+						</tr>
+					</tbody>
+					
+							
+				</table>
+				<div class="row col-md-12">
+					<div class="col-md-11"></div>
+					<input 
+						id="add"
+						type="button"
+						onclick="wdkAddChild('itensSolicitacao')" 
+						value="Novo" 
+						class="btn btn-info btn-lg col-md-1"
+					/>
+				</div>
+			</div>
+		</div>
+		<!-- /Itens da solicitação -->
+
+		<!-- Anexos da Solicitação -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					Dados da solicitação
+				</h3>
+			</div>
+		
+			<div class="panel-body">
+				<div class="row col-md-12" style="margin-top: 8px;">
+					<div class="form-group col-md-2">
+						<label for="numNF">Número da NF</label>
+						<input type="text" required id="numNF" name="numNF" class="form-control" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="dataReferencia">Data de Referência</label>
+						<input type="text" required id="dataReferencia" name="dataReferencia" class="form-control" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="valorTotalNF">Valor total da NF</label>
+						<input type="text" required id="valorTotalNF" name="valorTotalNF" class="form-control" />
+					</div>
+				</div>
+				<div class="row col-md-12">
+					<div class="form-group col-md-12 mt-20">
+						<input 
+						type="button"
+						id="anexo"
+						value="Anexar a NF" 
+						class="btn btn-info btn-lg col-md-2"
+						style="margin-top: 44px"
+					/>
+					</div>
+				</div>
+			</div>
+		
+
+		</div>
+		<!-- /Anexos da Solicitação -->
+		
+		<!-- Aprovação gestor -->
+		<div class="panel panel-default" id="gestor-container">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					Aprovação - Gestor
+				</h3>
+			</div>
+		
+			<div class="panel-body">
+				<div class="row col-md-12" style="margin-top: 8px;">
+					<div class="form-group col-md-6">
+						<label>Aprovar Pedido?</label>
+						<div>
+							<button style="margin-right: 4px;" class="btn btn-success col-md-2 " id="aprovGestor" type="button">SIM</button>
+							<button class="btn btn-danger col-md-2" id="reproveGestor" type="button">NÃO</button>
+							<input type="hidden" id="respostaGestor" name="respostaGestor"/> 
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<div class="form-group col-md-12">
+							<label for="observacoesGestor">Observações</label>
+							<textarea row="5" name="observacoesGestor" id="observacoesGestor" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		</div>
+		<!-- /Aprovação gestor -->
+
+		<!-- Aprovação RH -->
+		<div class="panel panel-default" id="rh-container">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					Aprovação - RH
+				</h3>
+			</div>
+		
+			<div class="panel-body">
+				<div class="row col-md-12" style="margin-top: 8px;">
+					<div class="form-group col-md-6">
+						<label>Aprovar Pedido?</label>
+						<div>
+							<div>
+								<button style="margin-right: 4px;" class="btn btn-success col-md-2 " id="aprovRH" type="button" data-your-modal>SIM</button>
+								<button class="btn btn-danger col-md-2" id="reproveRH" type="button">NÃO</button>
+								<input type="hidden" id="respostaRH" name="respostaRH"/> 
+							</div>
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<div class="form-group col-md-12">
+							<label for="observacoesRH">Observações</label>
+							<textarea row="5" name="observacoesRH" id="observacoesRH" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+			</div> 
+		
+
+		</div>
+		<!-- /Aprovação RH -->
+
+
+
+
+    </form>
+</div>
+</body>
+
+<script type="text/javascript" src="solicitacaoDeCompras_pedro.js"></script>
+<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+</html>

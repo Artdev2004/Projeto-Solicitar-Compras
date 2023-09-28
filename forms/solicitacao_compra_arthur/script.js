@@ -8,7 +8,8 @@ $(function(){
 
     if (etapa == "5" || etapa == 5){
         $("#gestor").show();
-    }   
+    }
+   
 })
 function escolhaGestor(escolha){
     var escolhaAtual;
@@ -25,8 +26,8 @@ $(document).ready(() => {
             <img src="icons/warning.png" alt="" style="width: 100px;">
             <h3>Tem certeza que deseja aprovar?</h3>
             <div>
-                <input type="button" id="sim" name="sim" onclick="escolhaGestor('Sim')">
-                <input type="button" id="nao" name="nao" onclick="escolhaGestor('Não')">
+                <input type="button" id="confirmSim" value="Sim" name="sim" onclick="escolhaGestor('Sim')">
+                <input type="button" id="confirmNao" value="Nao"name="nao" onclick="escolhaGestor('Não')">
             </div>
         </div>
     `

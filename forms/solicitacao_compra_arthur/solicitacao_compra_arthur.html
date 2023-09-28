@@ -148,7 +148,7 @@
 				<h3 class="panel-title">Itens da Solicitação</h3>
 			</div>
 			<div class="panel-body">
-				<table tablename="itensTabela" class="table table-hover">
+				<table tablename="tblItensCompra" class="table table-hover">
 					<thead>
 						<tr>
 							<td></td>
@@ -186,8 +186,12 @@
 							<td><select class="form-control" id="centroCustoProduto" name="centroCustoProduto"></td>
 								<!-- DATASET -->
 						</tr>
+						
 					</tbody>
 				</table>
+				<div class="form-group" style="display: flex; justify-content: end;">
+					<input type="button"  id="btnAdicionarItem" value="INSERIR" onclick="wdkAddChild('tblItensCompra');" class="form-control col-md-1"> 
+				</div>
 			</div>
 		</div>
 		<!-- ANEXOS SOLICITAÇÃO -->
@@ -196,17 +200,28 @@
 				<h3 class="panel-title">Anexos da Solicitação</h3>
 			</div>
 			<div class="panel-body">
-				<div class="form-group col-md-3">
-					<label for="nf">Número da NF</label>
-					<input type="number" name="nf" class="form-control" id="nf">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="nf">Número da NF</label>
+						<input type="number" name="nf" class="form-control" id="nf">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="dtReferencia">Data de Referência</label>
+						<input type="text" name="dtReferencia" class="form-control" id="dtReferencia">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="valorNf">Valor Total da NF</label>
+						<input type="number" name="valorNf" class="form-control" id="valorNf">
+					</div>
 				</div>
-				<div class="form-group col-md-3">
-					<label for="dtReferencia">Data de Referência</label>
-					<input type="text" name="dtReferencia" class="form-control" id="dtReferencia">
-				</div>
-				<div class="form-group col-md-3">
-					<label for="valorNf">Valor Total da NF</label>
-					<input type="number" name="valorNf" class="form-control" id="valorNf">
+				<div class="row" >
+					<div class="form-group" >
+						<input id="btnAnexarNf" name="btnAnexarNf" type="button" value="Anexar NF" class="btn btn-default btn-lg"  style="background-color: transparent; border-color: blue; color: blue; ">
+					</div>
+					<div class="form-group">
+						<label for="btnAnexarNf">Escolha o arquivo para anexar.</label>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -259,5 +274,10 @@
 </form>
 </div>
 <script src="script.js"></script>
+<style>
+	.table input{
+		display: none;
+	}
+</style>
 </body>
 </html>
