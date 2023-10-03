@@ -165,5 +165,124 @@
     </void>
    </array>
   </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 2303</string>
+   <array class="java.lang.String" length="38">
+    <void index="0">
+     <string>agencia</string>
+    </void>
+    <void index="1">
+     <string>aprovaGestor</string>
+    </void>
+    <void index="2">
+     <string>aprovaRh</string>
+    </void>
+    <void index="3">
+     <string>banco</string>
+    </void>
+    <void index="4">
+     <string>btnAnexarNf</string>
+    </void>
+    <void index="5">
+     <string>centroCusto</string>
+    </void>
+    <void index="6">
+     <string>centroCustoProduto</string>
+    </void>
+    <void index="7">
+     <string>cep</string>
+    </void>
+    <void index="8">
+     <string>cidade</string>
+    </void>
+    <void index="9">
+     <string>cnpjCpf</string>
+    </void>
+    <void index="10">
+     <string>conta</string>
+    </void>
+    <void index="11">
+     <string>deptEmitente</string>
+    </void>
+    <void index="12">
+     <string>descricao</string>
+    </void>
+    <void index="13">
+     <string>dtEmissao</string>
+    </void>
+    <void index="14">
+     <string>dtReferencia</string>
+    </void>
+    <void index="15">
+     <string>dtVencimento</string>
+    </void>
+    <void index="16">
+     <string>email</string>
+    </void>
+    <void index="17">
+     <string>endereco</string>
+    </void>
+    <void index="18">
+     <string>estado</string>
+    </void>
+    <void index="19">
+     <string>etapa</string>
+    </void>
+    <void index="20">
+     <string>filail</string>
+    </void>
+    <void index="21">
+     <string>historico</string>
+    </void>
+    <void index="22">
+     <string>necessidade</string>
+    </void>
+    <void index="23">
+     <string>nf</string>
+    </void>
+    <void index="24">
+     <string>nome</string>
+    </void>
+    <void index="25">
+     <string>observacoesGestor</string>
+    </void>
+    <void index="26">
+     <string>observacoesRh</string>
+    </void>
+    <void index="27">
+     <string>produto</string>
+    </void>
+    <void index="28">
+     <string>quant</string>
+    </void>
+    <void index="29">
+     <string>ramal</string>
+    </void>
+    <void index="30">
+     <string>razaoSocial</string>
+    </void>
+    <void index="31">
+     <string>telefone</string>
+    </void>
+    <void index="32">
+     <string>tipoConta</string>
+    </void>
+    <void index="33">
+     <string>tipoPagamento</string>
+    </void>
+    <void index="34">
+     <string>unMedida</string>
+    </void>
+    <void index="35">
+     <string>valorNf</string>
+    </void>
+    <void index="36">
+     <string>vlTotal</string>
+    </void>
+    <void index="37">
+     <string>vlUnit</string>
+    </void>
+   </array>
+  </void>
  </object>
 </java>
